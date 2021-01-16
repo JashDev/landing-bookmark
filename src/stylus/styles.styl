@@ -1,0 +1,74 @@
+@import './hero.styl'
+@import './header.styl'
+@import './features.styl'
+@import './download.styl'
+@import './questions.styl'
+@import './join.styl'
+@import './footer.styl'
+
+:root 
+  --softBlue: hsl(231, 69%, 60%)
+  --softRed: hsl(0, 94%, 66%)
+  --grayishBlue: hsl(229, 8%, 60%)
+  --veryDarkBlue: hsl(229, 31%, 21%)
+
+body
+  // background: lightgray
+  font-family: 'Rubik', sans-serif
+  color: var(--veryDarkBlue)
+  margin: 0
+  font-size: 18px
+
+ul
+  padding: 0
+  list-style: none
+  margin: 0
+
+.is-hidden
+  display: none
+
+.u-wrapper
+  max-width: 1280px
+  margin: auto
+  padding: 0 1em
+
+.u-h1
+  font-size: 2em
+  font-weight: 500
+
+.u-h2
+  @extends .u-h1
+  font-size: 1.6em
+
+.u-h4
+  @extends .u-h1
+  font-size: 1.3em
+  margin-top: 0.5em
+
+.u-p
+  color: var(--grayishBlue)
+  line-height: 1.9
+  font-size: .9em
+
+.u-button
+  background: var(--softBlue)
+  color: white
+  padding: 1em 1em
+  font-size: .9em
+  border-radius: .5em
+  margin-left: .5em
+  border: none
+  box-shadow: 0 5px 10px -5px var(--softBlue)
+  -webkit-appearance: none
+  &:first-of-type
+    margin: 0
+  &:focus
+    outline: none
+  &.is-gray
+    color: var(--veryDarkBlue)
+    background: #f7f7f7
+  &.is-red
+    background: var(--softRed)
+    color: #f7f7f7
+  &.is-full
+    width: 100%

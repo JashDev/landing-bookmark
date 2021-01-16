@@ -1,0 +1,91 @@
+.menu
+  // border: 1px solid blue
+  // display: none
+  visibility: hidden
+  opacity: 0
+  position: absolute
+  left: 0
+  right: 0
+  top: 100%
+  background: rgba(47, 53, 79, .9)
+  transform: translateY(-50px)
+  transition: .3s transform, .3s opacity
+  will-change: transform
+  height: 100vh
+
+  ul
+    padding: 0
+    list-style: none
+
+  li
+    border-top: 1px solid var(--grayishBlue)
+    &:last-child
+      a
+        border: 2px solid white
+        border-radius: 5px
+        margin-top: 1em
+        padding: .7em
+
+  a
+    color: white
+    text-decoration: none
+    text-transform: uppercase
+    display: block
+    text-align: center
+    padding: 1em
+    letter-spacing: 2px
+
+  &-checkbox
+    display: none
+    &:checked
+      & ~ .header // objeto adyacente
+        background: rgba(47, 53, 79, .9)
+
+        .menu-open
+          // border: 1px solid blue
+          background-image: url('../images/icon-close.svg')
+
+        .header-logo
+          background-image: url('../images/logo-bookmark-white.svg')
+
+        .menu 
+          // border: 1px solid green
+          // display: block
+          visibility: visible
+          opacity: 1
+          transform: translateY(0px)
+
+  &-open
+    // border: 1px solid red
+    user-select: none
+    width: 40px
+    height: 40px
+    display: inline-flex
+    background: url('../images/icon-hamburger.svg')
+    background-repeat: no-repeat
+    background-position: center
+    cursor: pointer
+  @media screen and (min-width 1024px)
+    transform: translateY(0)
+    visibility: visible
+    opacity: 1
+    position: initial
+    height: auto
+    background: initial
+    a
+      color: var(--veryDarkBlue)
+    ul
+      display: flex
+    li
+      border: none
+      &:last-child
+        a
+          border: none
+          border-radius: .5em
+          margin-top: 0
+          padding: .7em 2em
+          background: var(--softRed)
+          color: white
+          margin-left: 2em
+    &-open
+      display: none
